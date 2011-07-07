@@ -1,12 +1,14 @@
 <?php
-include 'header.php';
+/*
+ * index.php
+ *
+ * An index for LIMS III Instances
+ *
+ */
+
 include 'dbconfig.php';
-?>
-<div id='content'>
-	<h1 class="title">Welcome to the UltraScan III LIMS Portal...</h1>
-<p>Below please find the link to your institution's <b><i>UltraScan III LIMS Portal:</i></b></p>
-<ul>
-<?php
+
+// Log into db
 $link = mysql_connect( $dbhost, $dbusername, $dbpasswd ) 
         or die("Could not connect to database server.");
 
@@ -21,16 +23,35 @@ $query  = "SELECT institution, dbname, location " .
           "ORDER BY UPPER( institution ) ";
 $result = mysql_query( $query )
           or die( "Query failed : $query<br />\n" . mysql_error());
+
+$instance_text = "<ol>\n";
 while ( list( $instance, $db, $location ) = mysql_fetch_array( $result ) )
 {
-  echo "  <li><a href='http://uslims3.uthscsa.edu/$db'>$instance</a>" .  " ($location)</li>\n";
+  $instance_text .= "  <li><a href='http://uslims3.uthscsa.edu/$db'>$instance</a>" .
+                    " ($location)</li>\n";
 }
-echo "  <li><a href='http://uslims3.uthscsa.edu/lims3'>Old LIMS3 Test Database</a>" .
+$instance_text .= "  <li><a href='http://uslims3.uthscsa.edu/lims3'>Old LIMS3 Test Database</a>" .
                   " (San Antonio, TX)</li>\n";
-?>
+$instance_text .= "</ol>\n";
+
+// Now write out index
+
+include 'header.php';
+
+echo <<<HTML
+<div id='content'>
+	<h1 class="title">Welcome to the UltraScan III LIMS Portal...</h1>
+
+  <h4>Below please find the link to your institution&rsquo;s <b><i>UltraScan III LIMS Portal:</i></b></h4>
+
+  $instance_text
+
   <h4><a href='http://uslims3.uthscsa.edu/uslims3_newlims'>
         Request a new UltraScan III LIMS Instance</a></h4>
-</ul>
+  
 </div>
 
-<?php include 'footer.php'; ?>
+HTML;
+
+include 'footer.php';
+exit();

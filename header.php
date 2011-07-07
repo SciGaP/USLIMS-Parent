@@ -59,7 +59,7 @@ Released      : 8/1/2010
 </div>
 <!-- Begin page content -->
 <div id='page'>
-   <div id='sidebar' style='padding-bottom:40em;'>
+   <div id='sidebar' style='padding-bottom:30em;'>
       <ul>
          <li class='box'><a href="index.php">Welcome!</a></li>
          <li class='box'><a href="partners.php">Partners</a></li>
