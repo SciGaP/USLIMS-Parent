@@ -1,0 +1,6 @@
+<?php
+$dbusername         = '';  # the name of the MySQL user
+$dbpasswd           = '';  # the password for the MySQL user
+$dbname             = '';  # the name of the database
+$dbhost             = ''; # the host on which MySQL runs, generally localhost
+?>

@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-include 'uslims3dbconfig.php';
+include 'dbconfig.php';
 ?>
 <div id='content'>
 	<h1 class="title">Welcome to the UltraScan III LIMS Portal...</h1>
