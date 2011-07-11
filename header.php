@@ -60,11 +60,9 @@ Released      : 8/1/2010
 <!-- Begin page content -->
 <div id='page'>
    <div id='sidebar' style='padding-bottom:30em;'>
-      <ul>
-         <li class='box'><a href="index.php">Welcome!</a></li>
-         <li class='box'><a href="partners.php">Partners</a></li>
-         <li class='box'><a href="contacts.php">Contacts</a></li>
-         <li class='box'><a href="mailto:dzollars@gmail.com">Webmaster</a></li>
-      </ul>
+     <a href="index.php">Welcome!</a>
+     <a href="partners.php">Partners</a>
+     <a href="contacts.php">Contacts</a>
+     <a href="mailto:dzollars@gmail.com">Webmaster</a>
    </div>
 
