@@ -6,7 +6,7 @@
  *
  */
 
-include 'dbconfig.php';
+include 'config.php';
 
 // Log into db
 $link = mysql_connect( $dbhost, $dbusername, $dbpasswd ) 
