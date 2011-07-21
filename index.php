@@ -46,7 +46,7 @@ echo <<<HTML
 
   $instance_text
 
-  <h4><a href='http://uslims3.uthscsa.edu/uslims3_newlims'>
+  <h4><a href='http://uslims3.uthscsa.edu/uslims3_newlims/request_new_instance.php'>
         Request a new UltraScan III LIMS Instance</a></h4>
   
 </div>

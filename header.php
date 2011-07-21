@@ -77,7 +77,7 @@ HTML;
 <div id='page'>
    <div id='sidebar' style='padding-bottom:30em;'>
      <a href="index.php">Welcome!</a>
-     <a href='http://uslims3.uthscsa.edu/uslims3_newlims'>
+     <a href='http://uslims3.uthscsa.edu/uslims3_newlims/request_new_instance.php'>
         Request New LIMS</a>
      <a href="partners.php">Partners</a>
      <a href="contacts.php">Contacts</a>
