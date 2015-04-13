@@ -77,10 +77,12 @@ HTML;
 <div id='page'>
    <div id='sidebar' style='padding-bottom:30em;'>
      <a href="index.php">Welcome!</a>
+     <a href="tutorials.php">Tutorials</a>
      <a href='http://uslims3.uthscsa.edu/uslims3_newlims/request_new_instance.php'>
         Request New LIMS</a>
+     <a href="installation.php">US3 Integration</a>
      <a href="partners.php">Partners</a>
      <a href="contacts.php">Contacts</a>
-     <a href="mailto:dzollars@gmail.com">Webmaster</a>
+     <a href="mailto:demeler@gmail.com">Webmaster</a>
    </div>
 

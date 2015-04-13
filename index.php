@@ -20,6 +20,7 @@ mysql_select_db($dbname, $link)
 $query  = "SELECT institution, dbname, location " .
           "FROM metadata " .
           "WHERE status = 'completed' " .
+          "AND dbhost = '$org_site' " .
           "ORDER BY UPPER( institution ) ";
 $result = mysql_query( $query )
           or die( "Query failed : $query<br />\n" . mysql_error());
@@ -27,12 +28,14 @@ $result = mysql_query( $query )
 $instance_text = "<ol>\n";
 while ( list( $instance, $db, $location ) = mysql_fetch_array( $result ) )
 {
+  if ( $instance == "CAUMA3" || $instance == "cauma3d" )  continue;
   $instance_text .= "  <li><a href='http://uslims3.uthscsa.edu/$db'>$instance</a>" .
                     " ($location)</li>\n";
 }
-$instance_text .= "  <li><a href='http://uslims3.uthscsa.edu/lims3'>Old LIMS3 Test Database</a>" .
-                  " (San Antonio, TX)</li>\n";
 $instance_text .= "</ol>\n";
+
+$instance_text .= "<p><a href='http://uslims3.fz-juelich.de/index.php'>";
+$instance_text .= "Links to other institutions, using the Juelich LIMS/DB server</a></p><p/>";
 
 // Now write out index
 
@@ -41,6 +44,15 @@ include 'header.php';
 echo <<<HTML
 <div id='content'>
 	<h1 class="title">Welcome to the UltraScan III LIMS Portal...</h1>
+
+<!--
+
+<p class='message'>
+Sat Apr 19: LIMS and desktop access to databases will be unavailable due to planned
+maintenance to improve performance and reliability.
+</p>
+
+ -->
 
   <h4>Below please find the link to your institution&rsquo;s <b><i>UltraScan III LIMS Portal:</i></b></h4>
 
